@@ -1,0 +1,2 @@
+# zettel
+Neovim plugin
