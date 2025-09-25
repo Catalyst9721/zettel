@@ -37,7 +37,11 @@ local function create_zettel(opts)
     if opts.args ~= "" then
         input_name = opts.args
     else
-        input_name = vim.fn.input("Enter filename: ")
+        input_name = vim.fn.input({prompt = "Enter filename: ", cancelreturn = "exit"})
+    end
+
+    if input_name == "exit" then
+        return
     end
 
     local formatted_file_name = format_file_name(input_name)
